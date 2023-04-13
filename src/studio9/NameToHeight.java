@@ -21,7 +21,31 @@ public class NameToHeight {
 		Scanner in = new Scanner(System.in);
 
 		// FIXME
-		throw new NotYetImplementedException();
+		Map<String, Integer> nameToHeight = new HashMap<>();
+		nameToHeight.put("Hu", 174);
 
+		while (true) {
+			System.out.print("Enter a name to lookup the height,type 'quit' to quit ");
+			String name = in.nextLine();
+			if (name.equalsIgnoreCase("quit")) {
+				break;
+			}
+
+			Integer height = nameToHeight.get(name);
+
+			if (height != null) {
+				System.out.println(name + "'s height is " + height + " cm.");
+			} else {
+				System.out.println("The name " + name + " is not in the map.");
+			}
+		}
+		in.close();
 	}
 }
+
+
+
+
+
+
+
